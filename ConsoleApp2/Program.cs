@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            var arrayInt = new int[5];
+           var arrayInt = new int[5];
 
             Console.WriteLine("Please enter the amount of integers (5):");
 
@@ -20,8 +20,23 @@
                 Console.WriteLine(sortedArray[i]);
             }
 
-            
 
+            var arrayDouble = new double[5];
+           
+            Console.WriteLine("Please enter the amount of doubles (5):");
+
+            for (int i = 0; i < arrayDouble.Length; i++)
+            {
+                
+                arrayDouble[i] = Convert.ToDouble(Console.ReadLine());
+            }
+
+            var sortedArrayDouble = Sorter.SortDoble(arrayDouble);
+
+            for (int i = 0; i < sortedArrayDouble.Length; i++)
+            {
+                Console.WriteLine(sortedArrayDouble[i]);
+            }
 
 
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,9 +32,9 @@ namespace ConsoleApp2
             return notSortedArray;
         }
 
-        public double[] SortDoble(double[] notSortedArrayDouble)
+        public static double[] SortDoble(double[] notSortedArrayDouble)
         {
-            double tempDouble;
+           double tempDouble;
 
             for (int i = 0; i < notSortedArrayDouble.Length - 1; i++)
             {
@@ -52,11 +53,20 @@ namespace ConsoleApp2
             return notSortedArrayDouble;
         }
 
-        public char[] Sor(char[] notSortedArray)
+        public char[] Sor(char[] notSortedChar)
         {
-            var sortedArray = notSortedArray;
 
-            return sortedArray;
+            int[] alphabet = new int[26];
+            for (int i = 0; i < notSortedChar.Length; i++)
+            {
+                if (char.IsLetter(notSortedChar[i]))
+                {
+                    int index = notSortedChar[i] - 'a';
+                    alphabet[index]++;
+                }
+            }
+
+            return notSortedChar;
         }
 
         public string Sor(string notSortedString)
