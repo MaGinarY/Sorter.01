@@ -47,7 +47,6 @@ namespace ConsoleApp2
 
             for (int i = 0; i < arrayChar.Length; i++)
             {
-
                 arrayChar[i] = Convert.ToChar(Console.ReadLine());
             }
 
@@ -58,17 +57,11 @@ namespace ConsoleApp2
                 Console.WriteLine("here you are " + sortedArrayChar[i]);
             }
 
-           
 
-            string[] stringArray = new string[5];
+            Console.WriteLine("Enter the string:");
+            string word = Console.ReadLine();
 
-            Console.WriteLine("Enter the strings:");
-            for (int i = 0; i < stringArray.Length; i++)
-            {
-                stringArray[i] = Console.ReadLine(); 
-            }
-
-            var sortedString = Sorter.SortString(stringArray);
+            var sortedString = Sorter.SortString(word);
 
             for (int i = 0; i < sortedString.Length; i++)
             {

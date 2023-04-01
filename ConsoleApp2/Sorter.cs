@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -25,6 +26,7 @@ namespace ConsoleApp2
                     }
                 }
             }
+
             return notSortedArray;
         }
 
@@ -42,9 +44,10 @@ namespace ConsoleApp2
                     }
                 }
             }
+
             return notSortedArrayDouble;
         }
-
+     
         public static char[] SortChar(char[] notSortedChar)
         {
             for (int i = 0; i < notSortedChar.Length - 1; i++)
@@ -59,45 +62,17 @@ namespace ConsoleApp2
                     }
                 }
             }
-            //int[] alphabet = new int[255];
-            //for (int i = 0; i < notSortedChar.Length; i++)
-            //{    
-            //        int index = notSortedChar[i] - 'a';
-            //        alphabet[index]++;
-            //    char tempDoubl;
-
-            //    for (int h = 0; h < notSortedChar.Length - 1; h++)
-            //    {
-            //        for (int j = 0; j < notSortedChar.Length - (1 + h); j++)
-            //        {
-            //            if (notSortedChar[j] > notSortedChar[j + 1])
-            //            {
-            //                tempDoubl = notSortedChar[j + 1];
-            //                notSortedChar[j + 1] = notSortedChar[j];
-            //                notSortedChar[j] = tempDoubl;
-            //            }
-            //        }
-            //    }
-            //}
-
+            
             return notSortedChar;
         }
 
-        public static string[] SortString(string[] notSortedString)
+        public static string SortString(string notSortedString) 
         {
-            for (int i = 0; i < notSortedString.Length - 1; i++)
-            {
-                for (int j = 0; j < notSortedString.Length - i - 1; j++)
-                {
-                    if (notSortedString[j].CompareTo(notSortedString[j + 1]) > 0)
-                    {
-                        string temp = notSortedString[j];
-                        notSortedString[j] = notSortedString[j + 1];
-                        notSortedString[j + 1] = temp;
-                    }
-                }
-            }
-            return notSortedString;
+            var charArray = notSortedString.ToCharArray();
+            SortChar(charArray);
+
+            return new string(charArray);    
         }
     }
 }
+
